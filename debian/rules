@@ -1,0 +1,25 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+PRODUCT=hs-sshgateway
+PRODUCT_ROOT=usr/lib/hs/sshgateway
+DEB_ROOT=$(CURDIR)/debian/
+DESTPATH=$(DEB_ROOT)$(PRODUCT)/$(PRODUCT_ROOT)
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+override_dh_clean:
+	dh_testdir
+	dh_auto_clean
+	dh_clean
+
+override_dh_auto_install:
+	# product files
+	install -d $(DESTPATH)
+	cp -av ssh-gateway.py services $(DESTPATH)/
+	cp -av hs-api/lib-python/HSAgent $(DESTPATH)/
+
+%:
+	dh $@
+

@@ -1,0 +1,4 @@
+#!/bin/sh
+echo starting
+exec 2>&1
+exec /usr/lib/hs/sshgateway/ssh-gateway.py

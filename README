@@ -1,0 +1,4 @@
+generate ssh key:
+
+ssh-keygen -q -f ssh_host_rsa_key -N '' -t rsa
+

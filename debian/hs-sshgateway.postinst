@@ -1,0 +1,25 @@
+#!/bin/sh -e
+
+action="$1"
+oldversion="$2"
+
+umask 022
+
+if [ "$action" != configure ]
+  then
+  exit 0
+fi
+
+create_key() {
+  file="$1"
+  shift
+
+  if [ ! -f "$file" ] ; then
+    echo -n "Generating $file "
+    ssh-keygen -q -f "$file" -N '' "$@"
+    echo
+  fi
+}
+
+create_key /etc/hs/sshgateway/ssh_host_rsa_key -t rsa
+create_key /etc/hs/sshgateway/ssh_host_dsa_key -t dsa

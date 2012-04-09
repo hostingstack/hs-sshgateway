@@ -1,0 +1,12 @@
+Source: hs-sshgateway
+Section: net
+Priority: extra
+Maintainer: HostingStack Maintainers <maintainers@hostingstack.com>
+Build-Depends: debhelper (>= 7.0.50~)
+Standards-Version: 3.9.2
+
+Package: hs-sshgateway
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python-paramiko, openssh-client, python2.6, python-thrift
+Description: HostingStack SSH Gateway
+  HostingStack SSH Gateway

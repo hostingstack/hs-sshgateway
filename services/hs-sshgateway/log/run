@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# /usr/lib/hs/fooservice/services/<service>/log -> <service>
+LOGPREFIX=$(basename $(dirname $PWD))
+
+exec logger -t $LOGPREFIX -p daemon.info

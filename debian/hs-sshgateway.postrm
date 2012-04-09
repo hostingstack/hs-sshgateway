@@ -1,0 +1,14 @@
+#!/bin/sh -e
+
+#DEBHELPER#
+
+case $1 in
+  purge)
+    rm -f /etc/hs/sshgateway/ssh_host_rsa_key /etc/hs/sshgateway/ssh_host_rsa_key.pub
+    rm -f /etc/hs/sshgateway/ssh_host_dsa_key /etc/hs/sshgateway/ssh_host_dsa_key.pub
+    ;;
+esac
+
+
+exit 0
+
